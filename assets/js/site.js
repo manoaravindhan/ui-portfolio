@@ -263,4 +263,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     tick();
   })();
+
+  // Handle Netlify contact form submission via AJAX to show success message without reload
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var formData = new FormData(contactForm);
+      // Netlify expects form data POST to same origin
+      fetch('/', { method: 'POST', body: formData })
+        .then(function (resp) {
+          if (resp.ok) {
+            contactForm.reset();
+            var s = document.getElementById('contact-success');
+            if (s) { s.style.display = 'block'; }
+          } else {
+            alert('Sorry — there was a problem submitting the form.');
+          }
+        })
+        .catch(function () { alert('Network error. Please try again later.'); });
+    });
+  }
 });

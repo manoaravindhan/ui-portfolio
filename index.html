@@ -137,20 +137,30 @@
       <section id="contact" class="container section card" aria-labelledby="contact-heading">
         <h2 id="contact-heading">Contact</h2>
         <div class="contact-actions">
-          <p>If you'd like to work together or just say hi, reach out:</p>
+          <p>If you'd like to work together or just say hi, send a message.</p>
+
+          <!-- Netlify form -->
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="bot-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name">
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Let's connect for collaboration or opportunities!"></textarea>
+
+            <button class="button" type="submit">Send message</button>
+            <div id="contact-success" class="contact-success" style="display:none;margin-top:.9rem;color:var(--accent2);font-weight:700">Thanks — your message was sent.</div>
+          </form>
+
+          <p style="margin-top:1.25rem">— or use the quick links below.</p>
           <div class="contact-buttons">
-            <a class="button contact-btn" href="mailto:manoaravindhan@gmail.com" title="Email">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><rect width="24" height="24" rx="12" fill="url(#g1)"/><path d="M6 8.5v7a1.5 1.5 0 001.5 1.5h9a1.5 1.5 0 001.5-1.5v-7a1.5 1.5 0 00-1.5-1.5h-9A1.5 1.5 0 006 8.5zm1.5-.5h9a.5.5 0 01.5.5v.2l-5 3.5-5-3.5V8.5a.5.5 0 01.5-.5zm-.5 2.1l4.7 3.3a1 1 0 001.1 0l4.7-3.3V15a.5.5 0 01-.5.5h-9A.5.5 0 017 15v-4.9z" fill="#e6eef8"/></svg>
-              Email
-            </a>
-            <a class="button contact-btn ghost" href="tel:+919176872032" title="Call">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><rect width="24" height="24" rx="12" fill="url(#g1)"/><path d="M17.7 15.3l-2.1-.6a1 1 0 00-1 .3l-1.1 1.1a8.1 8.1 0 01-3.8-3.8l1.1-1.1a1 1 0 00.3-1l-.6-2.1A1 1 0 009 7H7.5A1.5 1.5 0 006 8.5c0 5.2 4.3 9.5 9.5 9.5A1.5 1.5 0 0017 16.5V15a1 1 0 00-.3-.7z" fill="#e6eef8"/></svg>
-              Call
-            </a>
-            <a class="button contact-btn ghost" href="https://www.linkedin.com/in/manoaravindhan/" target="_blank" rel="noopener" title="LinkedIn">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><rect width="24" height="24" rx="12" fill="#0A66C2"/><path d="M7.5 8.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm.25 2.25H5.25V18h2.5v-7.25zm3.25 0h-2.5V18h2.5v-3.5c0-1.1.9-2 2-2s2 .9 2 2V18h2.5v-3.75c0-2.1-1.7-3.75-3.75-3.75s-3.75 1.65-3.75 3.75V18h2.5v-7.25z" fill="#e6eef8"/></svg>
-              LinkedIn
-            </a>
+            <a class="button contact-btn" href="mailto:manoaravindhan@gmail.com" title="Email">Email</a>
+            <a class="button contact-btn ghost" href="tel:+919176872032" title="Call">Call</a>
+            <a class="button contact-btn ghost" href="https://www.linkedin.com/in/manoaravindhan/" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a>
           </div>
         </div>
       </section>
