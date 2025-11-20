@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: theme-matching hero illustration -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-hidden="false">
+  <defs>
+    <linearGradient id="lg1" x1="0" x2="1">
+      <stop offset="0" stop-color="#7c3aed" />
+      <stop offset="1" stop-color="#06b6d4" />
+    </linearGradient>
+    <radialGradient id="rg1" cx="30%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b" />
+      <feBlend in="SourceGraphic" in2="b" mode="normal" />
+    </filter>
+  </defs>
+
+  <!-- Background subtle radial glows to match theme -->
+  <rect width="100%" height="100%" fill="#071026" />
+  <circle cx="960" cy="100" r="260" fill="url(#rg1)" />
+  <circle cx="160" cy="60" r="200" fill="#7c3aed" opacity="0.06" />
+
+  <!-- Left abstract blob -->
+  <g transform="translate(140,180)">
+    <path d="M-120,-20 C-80,-120 80,-120 120,-20 C160,80 80,140 -40,120 C-160,100 -200,40 -120,-20 Z" fill="url(#lg1)" opacity="0.12" filter="url(#soft)" />
+  </g>
+
+  <!-- Right abstract blob -->
+  <g transform="translate(880,200)">
+    <path d="M-140,-30 C-100,-140 60,-120 140,-20 C220,80 140,160 40,140 C-60,120 -200,60 -140,-30 Z" fill="#06b6d4" opacity="0.08" filter="url(#soft)" />
+  </g>
+
+  <!-- Center composition: simplified dev at laptop (outline + accents) -->
+  <g transform="translate(420,140)">
+    <!-- laptop base (accent fill) -->
+    <rect x="-170" y="60" width="340" height="140" rx="14" fill="#071026" stroke="rgba(255,255,255,0.03)" />
+    <rect x="-150" y="72" width="300" height="92" rx="8" fill="url(#lg1)" opacity="0.12" />
+
+    <!-- person head (outline) -->
+    <circle cx="0" cy="-20" r="44" fill="none" stroke="rgba(230,238,248,0.95)" stroke-width="2" />
+    <!-- hair accent -->
+    <path d="M-26,-36 Q0,-64 26,-36" fill="none" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- eyes -->
+    <circle cx="-12" cy="-22" r="3" fill="rgba(230,238,248,0.95)" />
+    <circle cx="12" cy="-22" r="3" fill="rgba(230,238,248,0.95)" />
+    <!-- mouth -->
+    <path d="M-10,-8 Q0,-2 10,-8" fill="none" stroke="rgba(230,238,248,0.9)" stroke-width="1.6" stroke-linecap="round" />
+
+    <!-- shirt outline -->
+    <path d="M-48,8 Q-10,52 0,56 Q10,52 48,8" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2" stroke-linejoin="round" />
+
+    <!-- laptop in front: screen with glow -->
+    <g transform="translate(-120,22)">
+      <rect x="0" y="0" width="240" height="120" rx="10" fill="#071026" stroke="rgba(255,255,255,0.04)" />
+      <rect x="8" y="10" width="224" height="92" rx="6" fill="url(#lg1)" opacity="0.14" class="hero-svg-screen" />
+      <rect x="88" y="110" width="64" height="8" rx="4" fill="rgba(255,255,255,0.04)" />
+    </g>
+
+    <!-- small floating badges (tech dots) -->
+    <circle cx="180" cy="-10" r="8" fill="#7c3aed" opacity="0.95" />
+    <circle cx="200" cy="20" r="6" fill="#06b6d4" opacity="0.95" />
+  </g>
+
+  <!-- subtle foreground grid lines to give structure -->
+  <g opacity="0.03" stroke="#ffffff" stroke-width="1">
+    <path d="M0 300 H1200" />
+    <path d="M0 320 H1200" />
+  </g>
+</svg>
