@@ -87,12 +87,15 @@ fs.mkdirSync(distDir, { recursive: true });
             // If it's the index.html file, use the content we modified earlier (form injection)
             if (file === 'index.html') {
                 content = htmlContent; 
+                console.log(content.indexOf(placeholderString) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
             } else {
                 // Otherwise, read the file content from source
                 content = fs.readFileSync(srcPath, 'utf-8');
             }
             // Process text files for placeholders (if they contain any)
             const updatedContent = content.replaceAll(placeholderString, baseURL); 
+            console.log(content.indexOf(updatedContent) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
+
             fs.writeFileSync(destPath, updatedContent);
             console.log(`Processed: ${file}`);
         } else {
