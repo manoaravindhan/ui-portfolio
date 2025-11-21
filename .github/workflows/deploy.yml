@@ -32,4 +32,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist # <-- Change this line to point to the dist folder
-        cname: manoaravindhan.github.io 
