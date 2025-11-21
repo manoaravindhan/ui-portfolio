@@ -81,17 +81,17 @@ fs.mkdirSync(distDir, { recursive: true });
             fs.mkdirSync(destSubDir, { recursive: true });
         }
 
-        // Special handling for index.html (already read and modified)
-        if (file === 'index.html') {
-             // Replace the canonical placeholder using the already modified content
-            const finalContent = htmlContent.replace(placeholder, baseURL);
-            fs.writeFileSync(destPath, finalContent);
-            console.log(`Processed: ${file} (with form/canonical updates)`);
-        }
-        // Check if the file is text-based (like CSS or JS) or needs simple copying
-        else if (file.endsWith('.css') || file.endsWith('.js')) {
+        if (file.endsWith('.html') || file.endsWith('.css') || file.endsWith('.js')) {
+            let content;
+            
+            // If it's the index.html file, use the content we modified earlier (form injection)
+            if (file === 'index.html') {
+                content = htmlContent; 
+            } else {
+                // Otherwise, read the file content from source
+                content = fs.readFileSync(srcPath, 'utf-8');
+            }
             // Process text files for placeholders (if they contain any)
-            let content = fs.readFileSync(srcPath, 'utf-8');
             const updatedContent = content.replace(placeholder, baseURL);
             fs.writeFileSync(destPath, updatedContent);
             console.log(`Processed: ${file}`);
