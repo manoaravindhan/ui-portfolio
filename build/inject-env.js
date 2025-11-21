@@ -94,8 +94,9 @@ fs.mkdirSync(distDir, { recursive: true });
             }
             // Process text files for placeholders (if they contain any)
             const updatedContent = content.replaceAll(placeholderString, baseURL); 
-            console.log(content.indexOf(updatedContent) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
-
+            console.log("placeholderString:",placeholderString, "baseURL:",baseURL);
+            console.log(updatedContent.indexOf(placeholderString) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
+            console.log(updatedContent)
             fs.writeFileSync(destPath, updatedContent);
             console.log(`Processed: ${file}`);
         } else {
