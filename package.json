@@ -1,0 +1,27 @@
+{
+  "name": "mano-portfolio",
+  "version": "1.0.0",
+  "description": "Hi 👋, I'm Mano Aravindhan Gandhi — passionate about coding.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "node build/inject-env.js",
+    "build": "echo 'Build assets placed in dist folder'",
+    "postbuild": "echo 'Build complete'",
+    "deploy-netlify": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manoaravindhan/manoaravindhan.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manoaravindhan/manoaravindhan.github.io/issues"
+  },
+  "homepage": "https://github.com/manoaravindhan/manoaravindhan.github.io#readme",
+  "dependencies": {
+    "globby": "^16.0.0"
+  }
+}

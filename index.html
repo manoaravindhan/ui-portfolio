@@ -7,16 +7,16 @@
     <meta name="description" content="Mano Aravindhan — Full Stack Developer. React, Node, SASS, Docker, Azure." />
     <meta name="keywords" content="Mano Aravindhan, Full Stack Developer, React, Node.js, SASS, Docker, Azure, Portfolio, Web Developer, Informatica, Publicis Sapient, Infosys" />
     <meta name="author" content="Mano Aravindhan Gandhi" />
-    <link rel="canonical" href="https://manoaravindhan.com/" />
+    <link rel="canonical" href="CANON_URL_PLACEHOLDER/" />
     <meta property="og:title" content="Mano Aravindhan — Full Stack Developer" />
     <meta property="og:description" content="Portfolio of Mano Aravindhan, Full Stack Developer. React, Node, SASS, Docker, Azure." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://manoaravindhan.com/" />
-    <meta property="og:image" content="https://manoaravindhan.com/images/dev.png" />
+    <meta property="og:url" content="CANON_URL_PLACEHOLDER/" />
+    <meta property="og:image" content="CANON_URL_PLACEHOLDER/images/dev.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Mano Aravindhan — Full Stack Developer" />
     <meta name="twitter:description" content="Portfolio of Mano Aravindhan, Full Stack Developer. React, Node, SASS, Docker, Azure." />
-    <meta name="twitter:image" content="https://manoaravindhan.com/images/dev.png" />
+    <meta name="twitter:image" content="CANON_URL_PLACEHOLDER/images/dev.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -137,26 +137,12 @@
       <section id="contact" class="container section card" aria-labelledby="contact-heading">
         <h2 id="contact-heading">Contact</h2>
         <div class="contact-actions">
-          <p>If you'd like to work together or just say hi, send a message.</p>
+          <p>If you'd like to work together or just say hi, send a message — or use the quick links below.</p>
 
-          <!-- Netlify form -->
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
-            <input type="hidden" name="form-name" value="contact">
-            <input type="hidden" name="bot-field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name">
+          <!-- Netlify form inject-->
+          <div id="contact-form-container"></div>
+          <!-- End Netlify form inject-->
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com">
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Let's connect for collaboration or opportunities!"></textarea>
-
-            <button class="button" type="submit">Send message</button>
-            <div id="contact-success" class="contact-success" style="display:none;margin-top:.9rem;color:var(--accent2);font-weight:700">Thanks — your message was sent.</div>
-          </form>
-
-          <p style="margin-top:1.25rem">— or use the quick links below.</p>
           <div class="contact-buttons">
             <a class="button contact-btn" href="mailto:manoaravindhan@gmail.com" title="Email">Email</a>
             <a class="button contact-btn ghost" href="tel:+919176872032" title="Call">Call</a>

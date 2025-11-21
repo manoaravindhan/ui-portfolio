@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Trigger on pushes to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '23.7.0' # Use your required Node version
+
+    - name: Install dependencies (if you have a package.json)
+      run: npm install
+
+    - name: Run build script to inject GitHub URL
+      # This runs your prebuild script which populates the 'dist' folder
+      run: npm run build 
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist # <-- Change this line to point to the dist folder
+        cname: manoaravindhan.github.io 

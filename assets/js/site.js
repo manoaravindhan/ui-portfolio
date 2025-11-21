@@ -1,6 +1,6 @@
 // Smooth scrolling for internal links and a simple counter animation
 document.addEventListener('DOMContentLoaded', function () {
-  // Easter egg: type 'manodev' to trigger confetti and secret modal
+  // Easter egg: type 'mano' to trigger confetti and secret modal
   var eggSequence = 'mano';
   var eggIndex = 0;
   function showEasterEgg() {
