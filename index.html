@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mano Aravindhan — Full Stack Developer</title>
+    <meta name="description" content="Mano Aravindhan Gandhi — Full Stack Developer. React, Node, SASS, Docker, Azure, Java, AWS, AI." />
+    <meta name="keywords" content="Mano Aravindhan, Full Stack Developer, React, Node.js, SASS, Docker, Azure, Java, AWS, AI, Portfolio, Web Developer, Informatica, Publicis Sapient, Infosys" />
+    <meta name="author" content="Mano Aravindhan Gandhi" />
+    <link rel="canonical" href="https://manoaravindhan.github.io/" />
+    <meta property="og:title" content="Mano Aravindhan — Full Stack Developer" />
+    <meta property="og:description" content="Portfolio of Mano Aravindhan, Full Stack Developer. React, Node, SASS, Docker, Azure, Java, AWS, AI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manoaravindhan.github.io/" />
+    <meta property="og:image" content="https://manoaravindhan.github.io/images/dev.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mano Aravindhan — Full Stack Developer" />
+    <meta name="twitter:description" content="Portfolio of Mano Aravindhan, Full Stack Developer. React, Node, SASS, Docker, Azure, Java, AWS, AI." />
+    <meta name="twitter:image" content="https://manoaravindhan.github.io/images/dev.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <h1 class="site-title">Mano Aravindhan Gandhi</h1>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a class="button" href="resume.pdf" download="Mano_Aravindhan_Resume.pdf">Download Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section id="hero" class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <h2 id="hero-heading" class="visually-hidden">Hero Section</h2>
+            <p class="eyebrow">Full Stack Developer</p>
+            <h2>Hi — I'm Mano.</h2>
+            <p id="typed-intro" class="lead" aria-live="polite"></p>
+            <p><strong><span id="exp-counter" data-target="10">0</span>+ years experience</strong></p>
+            <p class="cta-row">
+              <a class="button primary" href="#work">See my work</a>
+              <a class="button ghost" href="mailto:manoaravindhan@gmail.com">Contact</a>
+            </p>
+          </div>
+          <div class="hero-media" aria-hidden="true">
+            <div class="hero-visuals">
+              <!-- Particles canvas -->
+              <canvas id="particles-canvas" aria-hidden="true"></canvas>
+              <!-- Animated SVG blob -->
+              <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.85" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(300,300)">
+                  <path id="blobPath" d="M120,-160C160,-120,190,-80,196,-36C202,8,183,54,154,90C125,126,86,152,44,170C2,188,-44,198,-86,186C-128,174,-166,140,-182,95C-198,50,-192,-6,-171,-50C-150,-94,-113,-126,-72,-156C-31,-186,13,-214,54,-206C95,-198,80,-200,120,-160Z" fill="url(#g1)"></path>
+                </g>
+              </svg>
+              <!-- Replace inline SVG with theme-aligned image (image.png) -->
+              <img class="hero-photo" src="images/dev.png" alt="Developer illustration" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="container section card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>Hello! I'm <strong>Mano</strong>, a full stack developer with 10+ years of experience building responsive web applications. I'm passionate about coding, engineering, performance, and developer experience.</p>
+      </section>
+
+      <section id="work" class="container section" aria-labelledby="work-heading">
+        <h2 id="work-heading">Selected Work</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Enterprise Data Catalog — Informatica</h3>
+            <p>Built and enhanced EDC’s lineage visualization and metadata processing for enterprise-scale data discovery and governance.</p>
+          </article>
+          <article class="card">
+            <h3>Client Dashboard — Publicis Sapient</h3>
+            <p>Built a high-volume dashboard and chatbot UIs for a major banking client. Worked on data visualizations and accessibility.</p>
+          </article>
+          <article class="card">
+            <h3>Various Projects — Infosys</h3>
+            <p>Delivered multiple projects across domains and prototyped POCs for client presentations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="container section card" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills & Technologies</h2>
+        <ul class="skills">
+          <li>React &amp; Next.js</li>
+          <li>HTML5 &amp; CSS3 (SASS)</li>
+          <li>TypeScript / JavaScript ES6+</li>
+          <li>Java &amp; Spring</li>
+          <li>Node.js &amp; Express</li>
+          <li>AWS, Azure</li>
+          <li>Testing: Jest, Cypress, JUnit</li>
+          <li>Git</li>
+        </ul>
+      </section>
+      
+        <section id="certifications" class="container section card" aria-labelledby="certifications-heading">
+          <h2 id="certifications-heading">Certifications</h2>
+          <ul class="cert-list">
+            <li>
+              <div class="cert-title">Microsoft Certified: Azure Fundamentals</div>
+              <div class="cert-meta">Microsoft &bull; Issued Feb 2023</div>
+              <a class="button cert-btn" href="https://www.credly.com/badges/61bfb60e-a893-486f-833b-44171cd09e1a/linked_in_profile" target="_blank" rel="noopener">Show credential</a>
+              <div class="cert-skills">Skills: Microsoft Azure</div>
+            </li>
+            <li>
+              <div class="cert-title">MCPS: Microsoft Certified Professional</div>
+              <div class="cert-meta">Microsoft &bull; Issued Oct 2016</div>
+            </li>
+            <li>
+              <div class="cert-title">MS: Programming in HTML5 with JavaScript and CSS3</div>
+              <div class="cert-meta">Microsoft &bull; Issued Oct 2016</div>
+            </li>
+            <li>
+              <div class="cert-title">Infosys Certified JavaScript Frameworks Professional</div>
+              <div class="cert-meta">Infosys &bull; Issued Dec 2015</div>
+            </li>
+          </ul>
+        </section>
+
+      <section id="contact" class="container section card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <div class="contact-actions">
+          <p>If you'd like to work together or just say hi, send a message — or use the quick links below.</p>
+
+          <!-- Netlify form inject-->
+          
+          <!-- End Netlify form inject-->
+
+          <div class="contact-buttons">
+            <a class="button contact-btn" href="mailto:manoaravindhan@gmail.com" title="Email">Email</a>
+            <a class="button contact-btn ghost" href="tel:+919176872032" title="Call">Call</a>
+            <a class="button contact-btn ghost" href="https://www.linkedin.com/in/manoaravindhan/" target="_blank" rel="noopener" title="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© 2025 Mano Aravindhan — Built with HTML & CSS. View on <a href="https://github.com/manoaravindhan">GitHub</a>.</p>
+      </div>
+    </footer>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
