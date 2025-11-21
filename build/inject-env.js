@@ -10,7 +10,7 @@ let baseURL;
 const rootDir = path.join(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const indexPath = path.join(rootDir, 'index.html');
-const placeholder = /CANON_URL_PLACEHOLDER/g;
+const placeholderString = 'CANON_URL_PLACEHOLDER';
 
 
 // --- Handle Form Injection (Specific to index.html) ---
@@ -92,7 +92,7 @@ fs.mkdirSync(distDir, { recursive: true });
                 content = fs.readFileSync(srcPath, 'utf-8');
             }
             // Process text files for placeholders (if they contain any)
-            const updatedContent = content.replace(placeholder, baseURL);
+            const updatedContent = content.replaceAll(placeholderString, baseURL); 
             fs.writeFileSync(destPath, updatedContent);
             console.log(`Processed: ${file}`);
         } else {
