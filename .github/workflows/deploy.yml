@@ -31,5 +31,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true          # ← forces a completely clean deploy
-          # cname: manoaravindhan.github.io   # optional – you can also set this in Settings → Pages
