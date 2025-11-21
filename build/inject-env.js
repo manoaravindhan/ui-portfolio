@@ -12,9 +12,7 @@ const distDir = path.join(rootDir, 'dist');
 const indexPath = path.join(rootDir, 'index.html');
 const placeholderString = 'CANON_URL_PLACEHOLDER';
 
-
 // --- Handle Form Injection (Specific to index.html) ---
-// We must read the index.html content here to apply both the form and the canonical URL placeholder logic
 let htmlContent = fs.readFileSync(indexPath, 'utf-8');
 
 if (netlifyContext) {
@@ -47,7 +45,6 @@ if (netlifyContext) {
 }
 console.log(`Injecting Base URL: ${baseURL}`);
 
-
 // --- Prepare for File Processing Logic ---
 
 // Handle cleaning the directory using Node.js FS module
@@ -60,10 +57,8 @@ if (fs.existsSync(distDir)) {
 // Create the dist directory if it doesn't exist
 fs.mkdirSync(distDir, { recursive: true });
 
-
 // --- Process All Files and Write to Dist ---
 
-// Since we modified index.html content in memory, we need to handle it slightly differently
 (async () => {
     // Dynamically import globby if you are using a newer version and keeping 'require' for fs/path
     const { globby } = await import('globby'); 
@@ -87,18 +82,30 @@ fs.mkdirSync(distDir, { recursive: true });
             // If it's the index.html file, use the content we modified earlier (form injection)
             if (file === 'index.html') {
                 content = htmlContent; 
-                console.log(content.indexOf(placeholderString) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
+                console.log(`Pre-replacement check for index.html: Placeholder count = ${(content.match(new RegExp(placeholderString, 'g')) || []).length}`);
             } else {
                 // Otherwise, read the file content from source
                 content = fs.readFileSync(srcPath, 'utf-8');
             }
+            
             // Process text files for placeholders (if they contain any)
             const updatedContent = content.replaceAll(placeholderString, baseURL); 
-            console.log("placeholderString:",placeholderString, "baseURL:",baseURL);
-            console.log(updatedContent.indexOf(placeholderString) !== -1 ? "Index.html contains placeholder for CANON_URL_PLACEHOLDER" : "Index.html does not contain placeholder for CANON_URL_PLACEHOLDER"   );
-            console.log(updatedContent)
-            fs.writeFileSync(destPath, updatedContent);
-            console.log(`Processed: ${file}`);
+            console.log("placeholderString:", placeholderString, "baseURL:", baseURL);
+            
+            // Fixed conditional: Report accurately
+            const placeholderCountAfter = (updatedContent.match(new RegExp(placeholderString, 'g')) || []).length;
+            if (placeholderCountAfter > 0) {
+                console.log(`WARNING: ${placeholderCountAfter} placeholders remain in ${file} after replacement!`);
+            } else {
+                console.log(`SUCCESS: All placeholders replaced in ${file}.`);
+            }
+            
+            try {
+                fs.writeFileSync(destPath, updatedContent);
+                console.log(`Processed: ${file}`);
+            } catch (error) {
+                console.error(`ERROR writing ${file}:`, error);
+            }
         } else {
             // Simply copy other files (images, fonts, etc.)
             fs.copyFileSync(srcPath, destPath);
